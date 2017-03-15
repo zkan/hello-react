@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import './style.css'
-import Counter from './components/Counter.js'
+import Counter from './components/Counter'
 
 const Hello = ({ firstName, lastName }) => {
   return (<h1>Hello, { firstName } { lastName }</h1>)
