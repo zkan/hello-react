@@ -21,6 +21,6 @@ render(Counter)
 
 if (module.hot) {
   module.hot.accept('./components/Counter', () => {
-    render(Counter)
+    render(require('./components/Counter').default)
   })
 }
