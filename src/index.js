@@ -8,14 +8,14 @@ const Hello = ({ firstName, lastName }) => {
   return (<h1>Hello, { firstName } { lastName }</h1>)
 }
 
-const render = (Counter) => (
+const render = (Counter) => {
   ReactDOM.render(
     <AppContainer>
-      <Counter label="I'm a counter" />
+      <Counter label="Hello, I'm a counter." />
     </AppContainer>,
     document.getElementById('react-root')
   )
-)
+}
 
 render(Counter)
 
