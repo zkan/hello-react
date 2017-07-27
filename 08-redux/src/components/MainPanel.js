@@ -35,8 +35,6 @@ class TodoList extends React.Component {
   render() {
     const { items } = this.props
 
-    console.log(this.props)
-
     return (
       <ul>
         {items.map((item, i) => <li key={i}>{item}</li>)}
