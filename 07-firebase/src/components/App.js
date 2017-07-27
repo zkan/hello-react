@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import firebase from '../firebase'
 
 class NewTodo extends React.Component {
   state = {
@@ -45,10 +46,21 @@ class TodoList extends React.Component {
 
 class App extends Component {
   state = {
-    items: [
-      'Say hello',
-      'Kill Mils',
-    ]
+    items: [],
+  }
+
+  componentDidMount() {
+    const itemsRef = firebase.database().ref('items')
+    itemsRef.on('value', (snapshot) => {
+      const items = snapshot.val()
+      let newItems = []
+      for (let item in items) {
+        newItems.push(items[item].text)
+      }
+      this.setState({
+        items: newItems
+      })
+    })
   }
 
   addNewItem = (item) => {
