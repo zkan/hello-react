@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 class NewTodo extends React.Component {
   state = {
@@ -12,9 +12,9 @@ class NewTodo extends React.Component {
   }
 
   handleOnClick = () => {
-    const { addNewItem } = this.props
+    const { addItem } = this.props
     if (this.state.text !== '') {
-      addNewItem(this.state.text)
+      addItem(this.state.text)
       this.setState({
         text: ''
       })
@@ -33,42 +33,24 @@ class NewTodo extends React.Component {
 
 class TodoList extends React.Component {
   render() {
-    const { todos } = this.props
+    const { items } = this.props
+
+    console.log(this.props)
 
     return (
       <ul>
-        {todos.map((item, i) => <li key={i}>{item}</li>)}
+        {items.map((item, i) => <li key={i}>{item}</li>)}
       </ul>
     )
   }
 }
 
-class MainPanel extends Component {
-  state = {
-    items: [
-      'Say hello',
-      'Kill Mils',
-    ]
-  }
-
-  addNewItem = (item) => {
-    this.setState({
-      items: [
-        ...this.state.items,
-        item
-      ]
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>ToDo!</h1>
-        <NewTodo addNewItem={this.addNewItem} />
-        <TodoList todos={this.state.items} />
-      </div>
-    );
-  }
-}
+const MainPanel = (props) => (
+  <div>
+    <h1>ToDo!</h1>
+    <NewTodo addItem={props.addItem} />
+    <TodoList items={props.todo.items} />
+  </div>
+)
 
 export default MainPanel

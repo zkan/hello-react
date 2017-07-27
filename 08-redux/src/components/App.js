@@ -1,5 +1,5 @@
 import React from 'react'
-import MainPanel from './MainPanel'
+import MainPanel from '../containers/MainPanel'
 
 const App = () => (
   <MainPanel />
