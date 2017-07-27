@@ -43,7 +43,7 @@ class TodoList extends React.Component {
   }
 }
 
-class App extends Component {
+class MainPanel extends Component {
   state = {
     items: [
       'Say hello',
@@ -70,5 +70,9 @@ class App extends Component {
     );
   }
 }
+
+const App = () => (
+  <MainPanel />
+)
 
 export default App
