@@ -13,6 +13,9 @@ storiesOf('Title', module)
   .add('test', () => (
     <Title title="This is title" />
   ))
+  .add('Test with number', () => (
+    <Title title="123456" />
+  ))
   .add('test with lorem', () => (
     <Title title="lorem" />
   ));
