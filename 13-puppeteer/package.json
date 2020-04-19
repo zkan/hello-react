@@ -1,0 +1,13 @@
+{
+  "name": "13-puppeteer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "puppeteer": "^0.13.0"
+  }
+}

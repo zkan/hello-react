@@ -2,26 +2,19 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 class Button extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      count: 0
-    }
-//    this.increaseCount = this.increaseCount.bind(this)
+  state = {
+    count: 0
   }
 
-  increaseCount() {
+  increaseCount = () => {
     this.setState(prevState => ({
       count: prevState.count + 1
     }))
   }
 
   render() {
-//    return (
-//      <button onClick={this.increaseCount.bind(this)}>{this.state.count}</button>
-//    )
     return (
-      <button onClick={e => this.increaseCount(e)}>{this.state.count}</button>
+      <button onClick={this.increaseCount}>{this.state.count}</button>
     )
   }
 }
